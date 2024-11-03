@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://epicworkshops.com.sg/wp-content/uploads/2018/02/Romantic-Couple-Playing-Guitar-Sunset-Moon-2560x1440.jpg'); /* Add a love-themed background image URL */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .proposal-box {
+            text-align: center;
+            background: transparent;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .proposal-box h1 {
+            color: #FF69B4;
+            font-size: 2em;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        p{
+            color: #e58282;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .yes {
+            background-color: #FF69B4;
+            color: white;
+        }
+
+        .no {
+            background-color: #FF6347;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-box">
+        <h1>I Love You ❤️</h1>
+        <p>Will you be my Bandii?</p>
+        <div class="buttons">
+            <button id="yesBtn" class="yes">Yes</button>
+            <button id="noBtn" class="no">No</button>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", () => {
+            // Swap button positions
+            const yesPosition = yesBtn.getBoundingClientRect();
+            const noPosition = noBtn.getBoundingClientRect();
+
+            // Swap positions
+            yesBtn.style.position = "absolute";
+            noBtn.style.position = "absolute";
+            yesBtn.style.left = noPosition.left + "px";
+            yesBtn.style.top = noPosition.top + "px";
+            noBtn.style.left = yesPosition.left + "px";
+            noBtn.style.top = yesPosition.top + "px";
+        });
+
+        yesBtn.addEventListener("click", () => {
+            // Open new page with a congratulatory message
+            window.open("congratulations.html", "_self");
+        });
+    </script>
+</body>
+</html>

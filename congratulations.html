@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('https://epicworkshops.com.sg/wp-content/uploads/2018/02/Romantic-Couple-Playing-Guitar-Sunset-Moon-2560x1440.jpg');
+            background-size:cover ;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FF69B4;
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #e58282;
+        }
+
+        .whatsapp-link {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #128C7E; 
+        }
+
+        
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('https://media.giphy.com/media/xUPGcgvoipFxRtpMl2/giphy.gif') no-repeat center center;
+            background-size: contain;
+            animation: fly 3s linear forwards;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                transform: translateY(-600px) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Congratulations!</h1>
+        <p>I also want to make you my girlfriend! 💕</p>
+        <a class="whatsapp-link" href="https://wa.me/+923424791230" target="_blank">
+            Let's come on WhatsApp
+        </a>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
+            document.body.appendChild(heart);
+
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 3000); 
+        }
+        
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
